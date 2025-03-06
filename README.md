@@ -34,7 +34,7 @@
    - 当我在技术指标计算后，把各种 `float64`、`int64`、`object` 混在一块儿时，如果后续进行 `int(...)` 或 `np.float32(...)` 转换，就可能崩溃。
 
 3. **数据读取**  
-   - yfinace的不同版本下载得到的数据格式略有不同,我使用的数据格式参见
+   - yfinace的不同版本下载得到的数据格式略有不同,我使用的数据格式以$AAPL为例
 
 4. **多维度动作**  
    - 使用 `DummyVecEnv` 包装后，SB3 往往给出的 action shape 多出一维，需要在 `env.step()` 里 `if len(actions.shape)>1: actions = actions[0]`。否则 `actions[i]` 不是标量而是一小段数组，又会导致类型问题。
