@@ -1,5 +1,7 @@
 # Deep Reinforcement Learning for Automated Stock Trading (Ensemble Strategy)
 
+本项目为本人2024.12在某基金量化部门实习时的所完成,和公司达成一致后开源代码.
+
 本项目基于论文 [**《Deep Reinforcement Learning for Automated Stock Trading: An Ensemble Strategy》**]([https://arxiv.org/abs/2010.02046](https://openfin.engineering.columbia.edu/sites/default/files/content/publications/ensemble.pdf))，该论文发表于 2020 年 ACM 国际金融人工智能会议（ICAIF 2020）。论文提出了一种集成策略，将 **Proximal Policy Optimization**（PPO）、**Advantage Actor Critic**（A2C）和 **Deep Deterministic Policy Gradient**（DDPG） 三种深度强化学习算法结合起来，用于自动化股票交易。实证测试中使用了 **道琼斯 30** 只股票，结果表明在风险调整后收益方面，集成策略优于任何单一算法，以及传统基准（道指指数、最小方差投资组合策略等）。
 
 在这个复现项目中，我们沿用了该论文思路，使用 **OpenAI Gym**（Gymnasium）来搭建交易环境，并基于 **Stable Baselines3** 训练多个 DRL 算法，最终集成成为一个可在道琼斯 30 或其他股票上进行自动化交易策略研究的工具。
